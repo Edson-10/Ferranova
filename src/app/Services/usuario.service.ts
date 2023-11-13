@@ -12,6 +12,7 @@ import { Usuario } from '../Interfaces/usuario';
   providedIn: 'root'
 })
 export class UsuarioService {
+  
   private urlApi: string = environment.endpoint + "Usuario/";
   
   constructor(private http: HttpClient) { }
