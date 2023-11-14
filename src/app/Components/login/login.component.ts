@@ -11,7 +11,7 @@ import { UtilidadService } from 'src/app/Reutilizable/utilidad.service';
   templateUrl: './login.component.html',
   styleUrls: ['./login.component.css']
 })
-export class LoginComponent  implements OnInit{
+export class LoginComponent implements OnInit {
 
   formularioLogin:FormGroup;
   ocultarPassword:boolean = true;
