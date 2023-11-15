@@ -24,9 +24,9 @@ export class ModalUsuarioComponent implements OnInit {
 
   constructor(
     private modalActual:MatDialogRef<ModalUsuarioComponent>,
-    @Inject(MAT_DIALOG_DATA) public dataUsuario:Usuario,
+    @Inject(MAT_DIALOG_DATA) public datosUsuario:Usuario,
     private fb: FormBuilder,
-    private _rolService: RolService,
+    private _rolServicio: RolService,
     private _usuarioServicio: UsuarioService,
     private _utilidadServicio: UtilidadService
   ){
@@ -38,10 +38,79 @@ export class ModalUsuarioComponent implements OnInit {
       clave : ['',Validators.required],
       esActivo : ['1', Validators.required],
     });
+
+    if(this.datosUsuario != null){
+
+      this.tituloAccion = "Editar",
+      this.botonAccion = "Atuañizar";
+    }
+
+    this._rolServicio.lista().subscribe({
+      next: (data) => {
+        if(data.status) this.listaRoles = data.value
+      },
+      error:(e) => {}
+    })
+
   }
 
   ngOnInit(): void {
-    
+    if(this.datosUsuario != null){
+
+      this.fomularioUsuario.patchValue({
+        nombreCompleto : this.datosUsuario.nombreCompleto,
+        correo : this.datosUsuario.correo,
+        idRol : this.datosUsuario.idRol,
+        clave : this.datosUsuario.clave,
+        esActivo : this.datosUsuario.esActivo.toString(),
+      })
+
+
+    }
   }
+
+
+
+  guardarEditar_Usuario(){
+
+    const _usuario: Usuario = {
+      idUsuario: this.datosUsuario == null ? 0 : this.datosUsuario.idUsuario,
+      nombreCompleto: this.fomularioUsuario.value.nombreCompleto,
+      correo: this.fomularioUsuario.value.correo,
+      idRol: this.fomularioUsuario.value.idRol,
+      rolDescripcion : "",
+      clave: this.fomularioUsuario.value.clave,
+      esActivo: parseInt(this.fomularioUsuario.value.esActivo),
+    }
+
+    if(this.datosUsuario == null){
+
+      this. _usuarioServicio.guardar(_usuario).subscribe({
+        next: (data) => {
+          if(data.status){
+            this._utilidadServicio.mostrarAlerta("El usuario fue registrado","Exito");
+            this.modalActual.close("true")
+          }else
+            this._utilidadServicio.mostrarAlerta("No se puede registrar el usuario","Error")    
+        },
+        error:(e) => {}
+      })
+
+    }else{
+
+      this. _usuarioServicio.editar(_usuario).subscribe({
+        next: (data) => {
+          if(data.status){
+            this._utilidadServicio.mostrarAlerta("El usuario fue editado","Exito");
+            this.modalActual.close("true")
+          }else
+            this._utilidadServicio.mostrarAlerta("No se pudo editar el usuario","Error")    
+        },
+        error:(e) => {}
+      })
+    }
+
+  }
+
 
 }
