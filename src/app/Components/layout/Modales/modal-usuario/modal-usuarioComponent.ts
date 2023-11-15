@@ -1,6 +1,7 @@
 import { Component, OnInit, Inject } from '@angular/core'
 
-import { FormGroup, FormBuilder , Validators } from '@angular/forms';
+import { FormGroup, FormBuilder, Validators } from '@angular/forms';
+
 import { MatDialogRef, MAT_DIALOG_DATA } from '@angular/material/dialog';
 import { Rol } from 'src/app/Interfaces/rol';
 import { Usuario } from 'src/app/Interfaces/usuario';
@@ -32,11 +33,11 @@ export class ModalUsuarioComponent implements OnInit {
   ) {
 
     this.fomularioUsuario = this.fb.group({
-      nombreCompleto: ['', Validators.required],
-      correo: ['', Validators.required],
-      idRol: ['', Validators.required],
-      clave: ['', Validators.required],
-      esActivo: ['1', Validators.required],
+      nombreCompleto  : ['', Validators.required],
+      correo          : ['', Validators.required],
+      idRol           : ['', Validators.required],
+      clave           : ['', Validators.required],
+      esActivo        : ['1', Validators.required],
     });
 
     if (this.datosUsuario != null) {
