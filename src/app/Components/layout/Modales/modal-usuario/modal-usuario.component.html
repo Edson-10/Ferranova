@@ -8,7 +8,7 @@
                 <mat-form-field appearance="outline">
                     <mat-label>Nombre Complete</mat-label>
                     <input matInput autocomplete="off" formControlName="nombreCompleto">
-                    <mat-icon matSuffix>account</mat-icon>
+                    <mat-icon matSuffix>account-box</mat-icon>
                 </mat-form-field>
             </mat-grid-tile>
 
@@ -37,10 +37,10 @@
             <mat-grid-tile>
                 <mat-form-field appearance="outline">
                     <mat-label>Contraseña</mat-label>
-                    <input matInput[type]=" ocultarPassword?'password':'text'"formControlName="clave">
+                    <input matInput[type]="ocultarPassword?'password':'text'"formControlName="clave">
                     <button mat-icon-button matSuffix (click)="ocultarPassword = !ocultarPassword" type="button"
                     >
-                    <mat-icon matSuffix>{{ocultarPassword?'visibility_off': 'visibility' }}</mat-icon> 
+                    <mat-icon matSuffix>{{ocultarPassword?'visibility_off': 'visibility'}}</mat-icon> 
                     </button>
                 </mat-form-field>
             </mat-grid-tile>
@@ -63,8 +63,8 @@
 <mat-dialog-actions align="end">
     <button mat-raised-button mat-dialog-close color="warn">Volver</button>
     <button mat-raised-button color="primary"
-      [disabled]="fomularioUsuario.invalid"
-      (click)="guardarEditar_Usuario()"
+      [disabled]=" fomularioUsuario.invalid"
+      (click)=" guardarEditar_Usuario()"
     >{{botonAccion}}</button>
 
 
