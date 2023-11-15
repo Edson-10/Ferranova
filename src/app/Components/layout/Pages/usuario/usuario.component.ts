@@ -1,4 +1,4 @@
-import { Component, OnInit, AfterViewInit, ViewChild } from '@angular/core';
+import { Component, OnInit, AfterViewInit, ViewChild, ViewChildren } from '@angular/core';
 
 import { MatTableDataSource } from '@angular/material/table';
 import { MatPaginator } from '@angular/material/paginator';
@@ -20,7 +20,8 @@ export class UsuarioComponent implements OnInit, AfterViewInit{
   columnasTabla:string[] = ['nombreCompleto','correo','rolDescripcion','estado','acciones'];
   dataInicio:Usuario[]=[];
   dataListaUsuarios = new MatTableDataSource(this.dataInicio);
-  @ViewChild(MatPaginator) paginacionTabla!: MatPaginator;
+  @ViewChild(MatPaginator) paginacionTabla! : MatPaginator;
+  
 
   constructor(
     private dialog: MatDialog,
