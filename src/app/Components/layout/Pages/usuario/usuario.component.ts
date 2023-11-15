@@ -52,7 +52,7 @@ export class UsuarioComponent implements OnInit, AfterViewInit{
 
   aplicarFiltroTabla(event:Event){
     const filterValue = (event.target as HTMLInputElement).value;
-    this.dataListaUsuarios.filter = filterValue.trim().toLocaleUpperCase();
+    this.dataListaUsuarios.filter = filterValue.trim().toLocaleLowerCase();
   }
 
   nuevoUsuario(){
@@ -79,7 +79,7 @@ export class UsuarioComponent implements OnInit, AfterViewInit{
       text: usuario.nombreCompleto,
       icon: "warning",
       confirmButtonColor: "#3085d6",
-      confirmButtonText: "SI, eliminar",
+      confirmButtonText: "Si, eliminar",
       showCancelButton: true,
       cancelButtonColor: '#d33',
       cancelButtonText: 'No, volver'

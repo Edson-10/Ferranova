@@ -42,7 +42,7 @@ export class ModalUsuarioComponent implements OnInit {
     if(this.datosUsuario != null){
 
       this.tituloAccion = "Editar",
-      this.botonAccion = "Atuañizar";
+      this.botonAccion = "Actulizar";
     }
 
     this._rolServicio.lista().subscribe({
@@ -114,3 +114,6 @@ export class ModalUsuarioComponent implements OnInit {
 
 
 }
+
+
+
