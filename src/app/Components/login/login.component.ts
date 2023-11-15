@@ -48,14 +48,14 @@ export class LoginComponent implements OnInit {
           this._utilidadServicio.guardarSesionUsuario(data.value);
           this.router.navigate(["pages"])
         }else
-          this._utilidadServicio.mostrarAlerta("No se encontraron concidencias","Opps")
+          this._utilidadServicio.mostrarAlerta("No se encontraron concidencias","Oopps")
           
       },
       complete: () =>{
         this.mostrarLoading = false;
       },
       error: () =>{
-        this._utilidadServicio.mostrarAlerta("Hubo un error","Opps")
+        this._utilidadServicio.mostrarAlerta("Hubo un error","Oopps")
       }
     })
 
