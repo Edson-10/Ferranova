@@ -10,7 +10,7 @@ import { HistorialVentaComponent } from './Pages/historial-venta/historial-venta
 import { ReporteComponent } from './Pages/reporte/reporte.component';
 import { DashBoardComponent } from './Pages/dash-board/dash-board.component';
 import { SharedModule } from 'src/app/Reutilizable/shared/shared.module';
-import { ModalUsuarioComponent } from './Modales/modal-usuario/ModalUsuarioComponent';
+import { ModalUsuarioComponent } from './Modales/modal-usuario/moda-lusuarioComponent';
 
 
 @NgModule({

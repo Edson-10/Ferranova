@@ -4,7 +4,7 @@ import { MatTableDataSource } from '@angular/material/table';
 import { MatPaginator } from '@angular/material/paginator';
 import { MatDialog } from '@angular/material/dialog';
 
-import { ModalUsuarioComponent } from '../../Modales/modal-usuario/ModalUsuarioComponent';
+import { ModalUsuarioComponent } from '../../Modales/modal-usuario/moda-lusuarioComponent';
 import { Usuario } from 'src/app/Interfaces/usuario';
 import { UsuarioService } from 'src/app/Services/usuario.service';
 import { UtilidadService } from 'src/app/Reutilizable/utilidad.service'; 
