@@ -21,7 +21,8 @@ import { ModalUsuarioComponent } from './Modales/modal-usuario/modal-usuarioComp
     HistorialVentaComponent,
     ReporteComponent,
     DashBoardComponent,
-    ModalUsuarioComponent
+    ModalUsuarioComponent,
+    
   ],
   imports: [
     CommonModule,
