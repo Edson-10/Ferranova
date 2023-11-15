@@ -54,10 +54,18 @@
                     </mat-select>
                 </mat-form-field>
             </mat-grid-tile>
-             
+
         </mat-grid-list>
     </form>
 
-
-
 </mat-dialog-content>
+
+<mat-dialog-actions align="end">
+    <button mat-raised-button mat-dialog-close color="warn">Volver</button>
+    <button mat-raised-button color="primary"
+      [disabled]="fomularioUsuario.invalid"
+      (click)="guardarEditar_Usuario()"
+    >{{botonAccion}}</button>
+
+
+</mat-dialog-actions>
