@@ -24,7 +24,7 @@
                 <mat-form-field appearance="outline">
                     <mat-label>Rol</mat-label>
                     <mat-select formControlName="idRol">
-                        <mat-option *ngFor="let item of listaRoles"[value]="item.idRol">
+                        <mat-option *ngFor="let item of listaRoles" [value]="item.idRol">
                             {{item.nombre}}
                         </mat-option>
                     </mat-select>
@@ -37,7 +37,7 @@
             <mat-grid-tile>
                 <mat-form-field appearance="outline">
                     <mat-label>Contraseña</mat-label>
-                    <input matInput[type]="ocultarPassword?'password':'text'"formControlName="clave">
+                    <input matInput [type]="ocultarPassword?'password':'text'"formControlName="clave">
                     <button mat-icon-button matSuffix (click)="ocultarPassword = !ocultarPassword" type="button"
                     >
                     <mat-icon matSuffix>{{ocultarPassword?'visibility_off': 'visibility'}}</mat-icon> 
