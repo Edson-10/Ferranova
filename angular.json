@@ -67,10 +67,10 @@
           "builder": "@angular-devkit/build-angular:dev-server",
           "configurations": {
             "production": {
-              "browserTarget": "Ferranova:build:production"
+              "buildTarget": "Ferranova:build:production"
             },
             "development": {
-              "browserTarget": "Ferranova:build:development"
+              "buildTarget": "Ferranova:build:development"
             }
           },
           "defaultConfiguration": "development"
@@ -78,7 +78,7 @@
         "extract-i18n": {
           "builder": "@angular-devkit/build-angular:extract-i18n",
           "options": {
-            "browserTarget": "Ferranova:build"
+            "buildTarget": "Ferranova:build"
           }
         },
         "test": {
